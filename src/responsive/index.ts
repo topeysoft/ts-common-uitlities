@@ -2,6 +2,7 @@ var responsiveData: { xs?: boolean, sm?: boolean, md?: boolean, lg?: boolean, xl
 var resposiveComponents: any = {};
 var responsiveConfig: TsResponsiveConfig;
 //var window=window||{addEventListener:()=>{}, innerWith:0};
+var OnChangeEvent = new Event('ts:reponsive:change');
 var initialized:boolean =false;
 
 function isVisible(elem: HTMLElement) {
@@ -24,12 +25,16 @@ function calculateSizes() {
     responsiveData.md = window.innerWidth >= responsiveConfig.breakpoints.md;
     responsiveData.lg = window.innerWidth >= responsiveConfig.breakpoints.lg;
     responsiveData.xl = window.innerWidth >= responsiveConfig.breakpoints.xl;
+    var data:CustomEventInit=responsiveData;
+    var onChange = new CustomEvent('ts:reponsive:change', data);
+    window.dispatchEvent(onChange);
 }
 
 function mergeConfig(config: TsResponsiveConfig) {
     responsiveConfig = new TsResponsiveConfig();
     return Object.assign(responsiveConfig, config);
 }
+
 
 function getData() {
     if(!initialized) init();
