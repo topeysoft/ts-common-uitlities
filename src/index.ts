@@ -12,7 +12,7 @@ export module TsCommonUnitl {
         return _isXs;
     }
     export function setXs(isXs) {
-        _isXs = isXs;
+        _isXs = isXs; 
     }
     export function isSm() {
         return _isSm;
