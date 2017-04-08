@@ -76,7 +76,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var responsiveData = {};
 var resposiveComponents = {};
 var responsiveConfig;
-var window = window || { addEventListener: () => { }, innerWith: 0 };
 var initialized = false;
 function isVisible(elem) {
     return !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);

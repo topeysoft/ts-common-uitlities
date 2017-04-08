@@ -1,7 +1,7 @@
 var responsiveData: { xs?: boolean, sm?: boolean, md?: boolean, lg?: boolean, xl?: boolean } = {};
 var resposiveComponents: any = {};
 var responsiveConfig: TsResponsiveConfig;
-var window=window||{addEventListener:()=>{}, innerWith:0};
+//var window=window||{addEventListener:()=>{}, innerWith:0};
 var initialized:boolean =false;
 
 function isVisible(elem: HTMLElement) {
