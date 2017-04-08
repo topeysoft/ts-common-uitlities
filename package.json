@@ -6,7 +6,9 @@
   "scripts": {
     "test:karma": "karma start karma.conf.js",
     "test": "mocha --opts mocha.opts && rm -rf test",
-    "test:auto": "mocha --opts mocha.opts --watch"
+    "test:auto": "mocha --opts mocha.opts --watch",
+    "build": "webpack --config config/webpack.build.js --watch",
+    "dev": "webpack-dev-server --watch"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,10 @@
   },
   "homepage": "https://github.com/topeysoft/ts-ng2-responsive#readme",
   "dependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.41",
+    "@types/tether": "^1.4.1",
+    "bootstrap": "^4.0.0-alpha.6",
     "ng2-responsive": "^0.8.3"
   },
   "devDependencies": {
@@ -28,6 +34,7 @@
     "@types/mocha": "^2.2.40",
     "@types/selenium-webdriver": "^2.44.26",
     "@types/sinon": "^2.1.2",
+    "@types/webpack-dev-server": "^1.12.6",
     "chai": "^3.5.0",
     "jasmine": "^2.5.3",
     "jasmine-node": "^1.14.5",
@@ -52,6 +59,7 @@
     "ts-loader": "^2.0.3",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2",
-    "webpack": "^2.1.0-beta.21"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.4.2"
   }
 }

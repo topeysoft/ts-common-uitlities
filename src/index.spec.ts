@@ -1,5 +1,5 @@
 import {expect, spy, dom} from 'mochaccino';
-
+// import {jquery}
 import { TsCommonUnitl } from './index';
 function beforeAll(callable){
    before(()=>{
