@@ -1,6 +1,6 @@
 var path=require('path');
 module.exports = {
-  entry: './src/test.ts',
+  entry: './index.d.ts',
   output: {
     filename: 'dist/bundle.js'
   },

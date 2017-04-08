@@ -4,7 +4,7 @@ module.exports = {
     // click on the name of the option to get to the detailed documentation
     // click on the items with arrows to show more examples / advanced options
 
-    entry: path.resolve('./', 'src/test.ts'), // string | object | array
+    entry: path.resolve('./', 'src/index.d.ts'), // string | object | array
     // Here the application starts executing
     // and webpack starts bundling
 

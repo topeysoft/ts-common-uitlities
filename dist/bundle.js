@@ -68,14 +68,13 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 var responsiveData = {};
 var resposiveComponents = {};
 var responsiveConfig;
+var OnChangeEvent = new Event('ts:reponsive:change');
 var initialized = false;
 function isVisible(elem) {
     return !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
@@ -95,6 +94,9 @@ function calculateSizes() {
     responsiveData.md = window.innerWidth >= responsiveConfig.breakpoints.md;
     responsiveData.lg = window.innerWidth >= responsiveConfig.breakpoints.lg;
     responsiveData.xl = window.innerWidth >= responsiveConfig.breakpoints.xl;
+    var data = responsiveData;
+    var onChange = new CustomEvent('ts:responsive:change', { detail: data });
+    window.dispatchEvent(onChange);
 }
 function mergeConfig(config) {
     responsiveConfig = new TsResponsiveConfig();
@@ -110,23 +112,36 @@ class TsResponsiveConfig {
         this.breakpoints = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1200 };
     }
 }
-exports.TsResponsiveConfig = TsResponsiveConfig;
-exports.TsResponsive = {
+/* harmony export (immutable) */ __webpack_exports__["a"] = TsResponsiveConfig;
+
+const TsResponsive = {
     isVisible: isVisible,
     init: init,
     data: getData()
 };
+/* harmony export (immutable) */ __webpack_exports__["b"] = TsResponsive;
+
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_index__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_responsive_index__ = __webpack_require__(0);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TsResponsiveConfig", function() { return __WEBPACK_IMPORTED_MODULE_1__src_responsive_index__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TsResponsive", function() { return __WEBPACK_IMPORTED_MODULE_1__src_responsive_index__["b"]; });
 
-Object.defineProperty(exports, "__esModule", { value: true });
-const responsive_1 = __webpack_require__(0);
-console.log('test', responsive_1.TsResponsive.data);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__) {
+
+"use strict";
 
 
 /***/ })

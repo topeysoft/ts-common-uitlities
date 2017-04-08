@@ -26,7 +26,7 @@ function calculateSizes() {
     responsiveData.lg = window.innerWidth >= responsiveConfig.breakpoints.lg;
     responsiveData.xl = window.innerWidth >= responsiveConfig.breakpoints.xl;
     var data:CustomEventInit=responsiveData;
-    var onChange = new CustomEvent('ts:reponsive:change', data);
+    var onChange = new CustomEvent('ts:responsive:change', {detail:data});
     window.dispatchEvent(onChange);
 }
 
