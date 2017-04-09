@@ -1,0 +1,1 @@
+export {TsResponsiveConfig, TsResponsive} from './src/responsive/index';
