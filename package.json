@@ -1,6 +1,6 @@
 {
   "name": "ts-common-uitlities",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "test:auto": "mocha --opts mocha.opts --watch",
     "build": "webpack --config config/webpack.build.js --watch",
     "dev": "webpack-dev-server --watch",
-    "deploy": "npm version patch && npm publish --access=public"
+    "deploy": "npm version patch --force && npm publish --access=public"
   },
   "author": "Temitope Adeyeri",
   "license": "ISC",
